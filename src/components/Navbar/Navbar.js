@@ -1,7 +1,26 @@
 import React,{useState} from "react";
+import web3Modal from 'web3modal'
+import {ethers} from 'ethers'
+
+const providerOptions ={
+
+}
 
 function Navbar() {
     const [mobNav ,setMobNav]=useState(false)
+    async function connectWallet(){
+      try {
+        let web3Modal =new Web3Modal (
+          {
+            cacheProvider :false,
+            providerOptions,
+          }
+        );
+        const
+      } catch (error) {
+        
+      }
+    }
   
   return (
     <>
