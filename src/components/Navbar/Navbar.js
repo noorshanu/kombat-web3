@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import web3Modal from 'web3modal'
+import Web3Modal from 'web3modal'
 import {ethers} from 'ethers'
 
 const providerOptions ={
@@ -16,8 +16,11 @@ function Navbar() {
             providerOptions,
           }
         );
-        const
+        const web3ModalInstance =await web3Modal.connect();
+        const web3ModalProvider =new ethers.providers.Web3Provider(web3ModalInstance);
+        console.log(web3ModalProvider)
       } catch (error) {
+        console.error(error)
         
       }
     }
@@ -240,7 +243,7 @@ function Navbar() {
                               className="item_inner"
                               style={{ fontWeight: "bold", color: "white" }}
                             >
-                              <button className="bold-item">Connect</button>
+                              <button onClick={connectWallet} className="bold-item">Connect</button>
                             </span>
                           </span>
                         </a>
