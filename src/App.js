@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Avatars from "./components/Avatars/Avatars";
 import Features from "./components/Feauters/Features";
 
+
 function App() {
   const [loading, setLoading] = useState(true);
   const spinner = document.getElementById("spinner");

@@ -1,29 +1,8 @@
 import React,{useState} from "react";
-import Web3Modal from 'web3modal'
-import {ethers} from 'ethers'
-
-const providerOptions ={
-
-}
-
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 function Navbar() {
     const [mobNav ,setMobNav]=useState(false)
-    async function connectWallet(){
-      try {
-        let web3Modal =new Web3Modal (
-          {
-            cacheProvider :false,
-            providerOptions,
-          }
-        );
-        const web3ModalInstance =await web3Modal.connect();
-        const web3ModalProvider =new ethers.providers.Web3Provider(web3ModalInstance);
-        console.log(web3ModalProvider)
-      } catch (error) {
-        console.error(error)
-        
-      }
-    }
+   
   
   return (
     <>
@@ -243,7 +222,8 @@ function Navbar() {
                               className="item_inner"
                               style={{ fontWeight: "bold", color: "white" }}
                             >
-                              <button onClick={connectWallet} className="bold-item">Connect</button>
+                               <ConnectButton />
+                              {/* <button onClick={connectWallet} className="bold-item">Connect</button> */}
                             </span>
                           </span>
                         </a>
